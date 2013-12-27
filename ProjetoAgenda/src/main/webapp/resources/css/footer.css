@@ -1,0 +1,58 @@
+.fhp {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.fbar {
+	background: #f2f2f2;
+	border-top: 1px solid #e4e4e4;
+	font-size: 13px;
+	line-height: 45px;
+	min-width: 980px;
+	color: #777;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.fbar a:hover {
+	color: #333;
+}
+
+.fbar .fbl {
+	padding: 0 0 0 27px !important;
+	margin: 0 !important;
+}
+
+a:visited {
+	color: #609;
+}
+
+a:hover,a:active {
+	text-decoration: underline;
+}
+
+a {
+	color: #12c;
+	text-decoration: none;
+}
+
+#fsc {
+	text-align: center;
+}
+
+#fsl {
+	margin-left: 30px;
+}
+
+#fsr {
+	margin-right: 30px;
+	float: right;
+	white-space: nowrap;
+}
+
+.fbar .fblf {
+	padding: 0 !important;
+	margin: 0 !important;
+}
