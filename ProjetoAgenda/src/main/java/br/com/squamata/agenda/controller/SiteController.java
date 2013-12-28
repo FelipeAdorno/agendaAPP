@@ -18,10 +18,10 @@ import br.com.squamata.agenda.service.EmpresaService;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping(value="/login")
-public class LoginController {
+@RequestMapping(value="/")
+public class SiteController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	private static final Logger logger = LoggerFactory.getLogger(SiteController.class);
 	
 	@Autowired
 	private EmpresaService empresaService;
@@ -31,16 +31,21 @@ public class LoginController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(Locale locale, Model model) {
-		return new ModelAndView("login");
+		return new ModelAndView("site/index");
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView login(Locale locale, Model model) {
-		return new ModelAndView("login");
+	@RequestMapping(value = "/contato", method = RequestMethod.GET)
+	public ModelAndView contato(Locale locale, Model model) {
+		return new ModelAndView("site/contato");
 	}
 	
-	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
-	public ModelAndView cadastro(Locale locale, Model model) {
-		return new ModelAndView("cadastro");
+	@RequestMapping(value = "/aderir", method = RequestMethod.GET)
+	public ModelAndView aderir(Locale locale, Model model) {
+		return new ModelAndView("site/aderir");
+	}
+	
+	@RequestMapping(value = "/sobre", method = RequestMethod.GET)
+	public ModelAndView sobre(Locale locale, Model model) {
+		return new ModelAndView("site/sobre");
 	}
 }

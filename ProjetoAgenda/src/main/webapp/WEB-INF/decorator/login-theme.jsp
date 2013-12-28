@@ -1,19 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<html ng-app>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Projeto Agenda - <decorator:title /></title>
+    <link href="<c:url value='/resources/css/estilo.css'  />" rel="stylesheet"/>
     <link href="<c:url value='/resources/css/bootstrap.min.css'  />" rel="stylesheet"/>
     <link href="<c:url value='/resources/css/bootstrap-theme.min.css'  />" rel="stylesheet"/>
     <link href="<c:url value='/resources/css/footer.css'  />" rel="stylesheet"/>
     <script src="<c:url value='/resources/js/jquery.js' />"></script>
+    <script src="<c:url value='/resources/js/jquery.mask.min.js' />"></script>
     <script src="<c:url value='/resources/js/angular.min.js' />"></script>
     <script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
+    <script src="<c:url value='/resources/js/Controller/LoginController.js' />"></script>
+    <script src="<c:url value='/resources/js/Main.js' />"></script>
     <decorator:head />
 </head>
 <body>
@@ -32,6 +35,5 @@
 			</span>
 		</div>
 	</div>
-    
 </body>
 </html>

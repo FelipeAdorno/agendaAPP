@@ -2,4 +2,5 @@
 <decorators defaultdir="/WEB-INF/decorator">
     <decorator name="theme" page="secure-theme.jsp" />
     <decorator name="login-theme" page="login-theme.jsp" />
+    <decorator name="site-theme" page="site-theme.jsp" />
 </decorators>

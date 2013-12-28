@@ -1,13 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="decorator" content="login-theme" />
+	<meta name="decorator" content="login-theme" />
 <title>Home</title>
 <style>
 body {
-	padding-top: 15%;
+	padding-top: 8%;
 	padding-bottom: 40px;
 	background-color: #eee;
 }
@@ -54,15 +54,20 @@ body {
 </style>
 </head>
 <body>
-	<form class="form-signin" role="form">
+	<form class="form-signin" role="form" action="<c:url value='/j_spring_security_check'/>" method="post" ng-controller="LoginController">
 		<h2 class="form-signin-heading">Efetuar Login</h2>
-		<input type="text" class="form-control" placeholder="Nome de usu�rio"
-			required="" autofocus=""> <input type="password"
-			class="form-control" placeholder="Senha" required=""> <label
-			class="checkbox"> <input type="checkbox" value="remember-me">
-			Continuar Logado
-		</label>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-	</form>
+		 <div ng-class="{'nao-visivel': displayLoginError == true, 'nao-visivel': displayLoginError == false}">
+		 	<br>
+            <div class="alert alert-danger">Erro ao efetuar login!</div>
+        </div>
+		<input type="text" name="j_username" id="j_username" class="form-control" placeholder="Nome de usuário" required autofocus >
+		<input type="password" name="j_password" id="j_password" class="form-control" placeholder="Senha" required> 
+		<label class="checkbox"><input type="checkbox" value="remember-me">Continuar Logado</label>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button><br />
+		<div style="text-align: center;">
+		<span>Ainda não é cadastrado? Clique <a href="<c:url value='/login/cadastro'  />">aqui.</a></span>
+		</div> 
+	</form> 
+	  {{usuario}}
 </body>
 </html>
