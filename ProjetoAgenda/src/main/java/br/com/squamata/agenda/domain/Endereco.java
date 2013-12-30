@@ -1,5 +1,6 @@
 package br.com.squamata.agenda.domain;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Endereco {
 	
 	@Id
-	private Integer id;
+	private ObjectId id;
 	
 	private String logradouro;
 	
@@ -21,11 +22,11 @@ public class Endereco {
 	
 	private String cep;
 
-	public Integer getId() {
+	public ObjectId getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(ObjectId id) {
 		this.id = id;
 	}
 

@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value="/home")
-public class HomeController  {
+@RequestMapping(value="/admin")
+public class AdminController  {
 
 	//private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView index(Locale locale, Model model) {
-		return new ModelAndView("home/index");
+		return new ModelAndView("admin/index");
 	}
 	
 }

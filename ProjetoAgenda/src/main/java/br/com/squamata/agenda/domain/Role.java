@@ -6,6 +6,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="rule")
 public class Role {
 
+	public Role(String role) {
+		this.role = role;
+	}
+	
 	@Id
 	private String role;
 

@@ -17,6 +17,7 @@
     <script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
     <script src="<c:url value='/resources/js/Controller/LoginController.js' />"></script>
     <script src="<c:url value='/resources/js/Main.js' />"></script>
+    <script src="<c:url value='/resources/js/json2.js' />"></script>
     <decorator:head />
 </head>
 <body>

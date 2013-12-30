@@ -16,6 +16,7 @@
     <script src="<c:url value='/resources/js/angular.min.js' />"></script>
     <script src="<c:url value='/resources/js/bootstrap.min.js' />"></script>
     <script src="<c:url value='/resources/js/Main.js' />"></script>
+    <script src="<c:url value='/resources/js/json2.js' />"></script>
     <decorator:head />
     <style>
     body {
@@ -25,7 +26,7 @@
     
 </head>
 <body>
-	<div class="navbar navbar-default navbar-static-top" rule="navigation">
+	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"

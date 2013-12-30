@@ -4,11 +4,9 @@ import org.bson.types.ObjectId;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.squamata.agenda.domain.Usuario;
+import br.com.squamata.agenda.domain.Endereco;
 
 @Repository
-public interface UsuarioRepository extends PagingAndSortingRepository<Usuario,ObjectId> {
+public interface EnderecoRepository extends PagingAndSortingRepository<Endereco,ObjectId> {
 
-	Usuario findByNomeUsuario(String nomeUsuario);
-	
 }

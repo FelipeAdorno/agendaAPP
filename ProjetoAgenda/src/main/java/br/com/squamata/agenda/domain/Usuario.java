@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.bson.types.ObjectId;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,21 +13,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario {
 	
 	@Id
-	private Integer id;
-
+	private ObjectId id;
+	
+	@NotEmpty(message="Preencha o campo Nome de Usuário")
 	private String nomeUsuario;
 	
+	@NotEmpty(message="Preencha o campo Senha")
 	private String senha;
 	
 	private Boolean habilitado;
 	
 	private List<Role> roles = new ArrayList<Role>();
 
-	public Integer getId() {
+	public ObjectId getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(ObjectId id) {
 		this.id = id;
 	}
 

@@ -11,11 +11,12 @@
  
     <security:http auto-config="true" use-expressions="true" >
  
-        <security:form-login login-page="/login/" authentication-failure-url="/login/?error=403" default-target-url="/home/" />
+        <security:form-login login-page="/login/" authentication-failure-url="/login/?error=403" authentication-success-handler-ref="springSecurityAfterLoginService" />
  
         <security:logout invalidate-session="true" logout-success-url="/login/" logout-url="/logout"  />
         
-        <security:intercept-url pattern="/home/**" access="hasRole('ROLE_USER')" />
+        <security:intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />
+         <security:intercept-url pattern="/agendamento/**" access="hasAnyRole('ROLE_OPERADOR', 'ROLE_ADMIN')" />
         
     </security:http>
 
