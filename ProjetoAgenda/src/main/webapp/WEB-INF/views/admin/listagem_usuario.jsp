@@ -7,10 +7,12 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  ADMIN ${serverTime}. </P>
+<br />
+<div class="row">
+	<ul class="breadcrumb">
+		<li><a href="<c:url value='/usuario/novo'/>"Novo</a></li>
+		<li class="active">Listar</li>
+	</ul>
+</div>
 </body>
 </html>

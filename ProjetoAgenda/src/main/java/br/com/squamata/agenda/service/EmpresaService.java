@@ -8,5 +8,4 @@ import br.com.squamata.agenda.domain.Empresa;
 
 public interface EmpresaService extends AbstractService<Empresa, ObjectId> {
 	
-	Empresa buscarPorUsuarioNomeUsuario(String nomeUsuario);
 }

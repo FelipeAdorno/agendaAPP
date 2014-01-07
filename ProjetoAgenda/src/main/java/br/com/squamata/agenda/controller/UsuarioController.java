@@ -2,7 +2,8 @@ package br.com.squamata.agenda.controller;
 
 import java.util.Locale;
 
-import javax.validation.Valid;
+import javax.validation.Validation;
+import javax.validation.ValidatorFactory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,46 +23,42 @@ import br.com.squamata.agenda.enumeration.TipoMensagemEnum;
 import br.com.squamata.agenda.service.UsuarioService;
 import br.com.squamata.agenda.vo.MensagemRetornoVO;
 
-/**
- * Handles requests for the application home page.
- */
 @Controller
-@RequestMapping(value="/login")
-public class LoginController extends AbstractController {
+@RequestMapping(value="/usuario")
+public class UsuarioController extends AbstractController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 	
 	@Autowired
 	private UsuarioService usuarioService;
-	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView index(Locale locale, Model model) {
-		return new ModelAndView("login");
-	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView login(Locale locale, Model model) {
-		return new ModelAndView("login");
-	}
-	
-	@RequestMapping(value = "/cadastro", method = RequestMethod.GET)
-	public ModelAndView cadastro(Locale locale, Model model) {
-		return new ModelAndView("cadastro");
+
+	@RequestMapping(value = "/novo", method = RequestMethod.GET)
+	public ModelAndView novoUsuario(Model model) {
+		Usuario usuarioLogado = this.getUsuarioLogado();
+		model.addAttribute("usuarioLogado", usuarioLogado);
+		return new ModelAndView("admin/usuario");
 	}
 	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
-	public ResponseEntity<MensagemRetornoVO> cadastrar(@Valid @RequestBody Usuario usuario, BindingResult result, Locale locale) {
+	public ResponseEntity<MensagemRetornoVO> cadastrar(@RequestBody Usuario usuario, BindingResult result, Locale locale) {
+		
 		final MensagemRetornoVO retorno = new MensagemRetornoVO();
+		
+		//passando a empresa da sessão para o usuário
+		usuario.setEmpresa(this.getUsuarioLogado().getEmpresa());
+		
 		if(result.hasErrors()) {
 			tratarErrosValidacao(result.getFieldErrors());
 		}else {
-			logger.info("Realizando novo cadastro da empresa: " + usuario.getEmpresa().getRazaoSocial());
-			usuarioService.salvarNovoCadastroNoSistema(usuario);
+			
+			logger.info("Realizando novo cadastro do usuário: " + usuario.getNomeUsuario());
+			usuarioService.salvar(usuario);
 			retorno.setTipoMensagemEnum(TipoMensagemEnum.SUCCESS);
-			retorno.addMensagem("Cadastro realizado com sucesso, Clique <a href='/squamata/login/'>aqui</a> para fazer login!");
+			retorno.addMensagem("Usuário cadastrado com sucesso!");
 		}
 		
 		return new ResponseEntity<MensagemRetornoVO>(retorno, HttpStatus.OK);
 		
 	}
+	
 }

@@ -68,6 +68,5 @@ body {
 		<span>Ainda não é cadastrado? Clique <a href="<c:url value='/login/cadastro'  />">aqui.</a></span>
 		</div> 
 	</form> 
-	  {{usuario}}
 </body>
 </html>

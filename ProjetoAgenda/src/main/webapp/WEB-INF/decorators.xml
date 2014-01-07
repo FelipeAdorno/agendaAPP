@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/WEB-INF/decorator">
     <decorator name="theme" page="secure-theme.jsp" />
+    <decorator name="admin" page="admin-theme.jsp" />
     <decorator name="login-theme" page="login-theme.jsp" />
     <decorator name="site-theme" page="site-theme.jsp" />
 </decorators>

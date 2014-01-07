@@ -9,6 +9,6 @@ import br.com.squamata.agenda.domain.Empresa;
 @Repository
 public interface EmpresaRepository extends PagingAndSortingRepository<Empresa,ObjectId> {
 
-	Empresa findByUsuarioNomeUsuario(String nomeUsuario);
+//	Empresa findByUsuarioNomeUsuario(String nomeUsuario);
 	
 }

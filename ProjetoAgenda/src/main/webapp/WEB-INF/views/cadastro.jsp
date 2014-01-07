@@ -36,21 +36,21 @@ body {
         
             <form method="post" class="form" role="form" id="cadastroForm" ng-submit="cadastrar();">
             <h2 class="form-signin-heading">Cadastrar-se</h2>
-            <input ng-model="empresa.razaoSocial" class="form-control" placeholder="Razão Social" type="text" required autofocus />
-            <input ng-model="empresa.nomeFantasia" class="form-control" placeholder="Nome Fantasia" type="text"  required />
-            <input ng-model="empresa.responsavel" class="form-control" placeholder="Responsável" type="text"  required />
+            <input ng-model="usuario.empresa.razaoSocial" class="form-control" placeholder="Razão Social" type="text" required autofocus />
+            <input ng-model="usuario.empresa.nomeFantasia" class="form-control" placeholder="Nome Fantasia" type="text"  required />
+            <input ng-model="usuario.nome" class="form-control" placeholder="Responsável" type="text"  required />
             <div class="row">
                 <div class="col-xs-6 col-md-6">
-                    <input ng-model="empresa.cnpj" class="form-control cnpj" placeholder="CNPJ" type="text" required  />
+                    <input ng-model="usuario.empresa.cnpj" class="form-control cnpj" placeholder="CNPJ" type="text" required  />
                 </div>
                 <div class="col-xs-6 col-md-6">
-                    <input ng-model="empresa.telefone" class="form-control tel" placeholder="Telefone" type="text" required  />
+                    <input ng-model="usuario.empresa.telefone" class="form-control tel" placeholder="Telefone" type="text" required  />
                 </div>
             </div>
-            <input ng-model="empresa.usuario.nomeUsuario" class="form-control" placeholder="Email" type="email" required />
+            <input ng-model="usuario.nomeUsuario" class="form-control" placeholder="Email" type="email" required />
             <div class="row">
                 <div class="col-xs-6 col-md-6">
-                    <input ng-model="empresa.usuario.senha" class="form-control" placeholder="Senha" type="password" required />
+                    <input ng-model="usuario.senha" class="form-control" placeholder="Senha" type="password" required />
                 </div>
                 <div class="col-xs-6 col-md-6">
                     <input class="form-control" placeholder="Confirmar Senha" type="password" />
@@ -60,7 +60,7 @@ body {
             <br />
             <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
             <br />
-            <div style="text-align: center;">
+            <div class="text-center">
             <span>Voltar para a página de <a href="<c:url value='/login/'  />">login.</a></span>
             </div>
             </form>

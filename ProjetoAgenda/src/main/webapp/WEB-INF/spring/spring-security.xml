@@ -16,7 +16,10 @@
         <security:logout invalidate-session="true" logout-success-url="/login/" logout-url="/logout"  />
         
         <security:intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />
-         <security:intercept-url pattern="/agendamento/**" access="hasAnyRole('ROLE_OPERADOR', 'ROLE_ADMIN')" />
+        <security:intercept-url pattern="/usuario/novo/**" access="hasAnyRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/usuario/listar/**" access="hasAnyRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/usuario/visualizar/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_OPERADOR')" />
+        <security:intercept-url pattern="/agendamento/**" access="hasAnyRole('ROLE_OPERADOR', 'ROLE_ADMIN')" />
         
     </security:http>
 

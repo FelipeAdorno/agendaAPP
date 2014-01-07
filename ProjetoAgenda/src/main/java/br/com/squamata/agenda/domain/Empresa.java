@@ -1,12 +1,9 @@
 package br.com.squamata.agenda.domain;
 
 
-import javax.validation.Valid;
-
 import org.bson.types.ObjectId;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="empresa")
@@ -26,15 +23,7 @@ public class Empresa {
 	
 	private String telefone;
 	
-	@NotEmpty(message="Preencha o campo Responsável")
-	private String responsavel;
-	
-	@DBRef
 	private Endereco endereco = new Endereco();
-
-	@Valid
-	@DBRef
-	private Usuario usuario = new Usuario();
 
 	public ObjectId getId() {
 		return id;
@@ -76,27 +65,11 @@ public class Empresa {
 		this.telefone = telefone;
 	}
 
-	public String getResponsavel() {
-		return responsavel;
-	}
-
-	public void setResponsavel(String responsavel) {
-		this.responsavel = responsavel;
-	}
-
 	public Endereco getEndereco() {
 		return endereco;
 	}
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
 	}
 }

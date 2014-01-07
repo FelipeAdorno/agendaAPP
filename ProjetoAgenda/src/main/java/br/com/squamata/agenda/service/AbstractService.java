@@ -12,6 +12,6 @@ public interface AbstractService<Domain, ID> {
 	
 	Domain buscarPorId(ID id);
 	
-	Page<Domain> listar(Integer paginaAtual, Integer quantidadePaginas, String ordenacao);
+	Page<Domain> listar(Integer paginaAtual, Integer quantidadeRegistros, String ordenacao);
 	
 }

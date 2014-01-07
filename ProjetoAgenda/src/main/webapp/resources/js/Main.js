@@ -1,10 +1,3 @@
-var TipoMensagemEnum = {
-  DANGER : {descricao: "DANGER", classe: "alert-danger"}, 
-  SUCCESS: {descricao: "SUCCESS", classe: "alert-success"},
-  INFO :   {descricao: "INFO", classe: "alert-info"},
-  WARNING :{descricao: "WARNING", classe: "alert-warning"},
-};
-
 $(document).ready(function(){
 	Main.init();
 });
